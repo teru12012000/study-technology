@@ -1,9 +1,13 @@
+import Header from "@/components/Header";
 import { datatype } from "@/data/datatype";
 import { client } from "@/lib/client";
+import doc from "@/styles/doc.css";
+import { IconButton } from "@mui/material";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
 import Head from "next/head";
 import Link from "next/link";
+import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 type Props={
   data:datatype
 }
@@ -35,15 +39,20 @@ const Doc:NextPage<Props> = ({data}) => {
         <title>{data.title}</title>
         <meta name="discription" content={`${data.title}のページです`}/>
       </Head>
-      <div>
-        <h1>{data.title}</h1>
-        <div dangerouslySetInnerHTML={{__html:`${data.detail}`}}></div>
-        <div>
-          <Link href={"/"}>
-            ホームへ！
-          </Link>
-        </div>
+
+      <Header/>
+      <div className={doc.iconbox}>
+        <Link href={"/"}>
+          <IconButton aria-label="delete" size="large">
+            <KeyboardBackspaceIcon fontSize="inherit" color="primary" />
+          </IconButton>
+        </Link>
+        
       </div>
+      <section>
+        <h1 className={doc.titletxt}>{data.title}</h1>
+        <div dangerouslySetInnerHTML={{__html:`${data.detail}`}} className={doc.content}></div>
+      </section>
     </>
   );
 }
