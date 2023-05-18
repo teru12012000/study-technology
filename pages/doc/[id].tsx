@@ -37,7 +37,7 @@ const Doc:NextPage<Props> = ({data}) => {
     <>
       <Head>
         <title>{data.title}</title>
-        <meta name="discription" content={`${data.title}のページです`}/>
+        <meta name="description" content="私が技術の勉強をまとめたやつです" />
       </Head>
 
       <Header/>
