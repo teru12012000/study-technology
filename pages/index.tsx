@@ -8,6 +8,7 @@ import Link from 'next/link'
 import Header from '@/components/Header'
 import home from '@/styles/Home.css'
 import { Button } from '@mui/material'
+import { kindPage } from '@/data/kind'
 
 const inter = Inter({ subsets: ['latin'] })
 type Props={
@@ -30,19 +31,20 @@ export default function Home({data}:Props) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header/>
+      <Header
+        link={''}
+      />
       <section className={home.content}>
         <p className={home.about}>
           こちらは私が勉強したものを簡単にまとめたものです。<br/>
         </p>
         <div className={home.menucontent}>
-          <h2 className={home.menutxt}>MENU</h2>
           <ol className={home.menulist}>
-            {data.map((item:datatype,index:number)=>(
+            {kindPage.map((item:string,index:number)=>(
               <li key={index} className={home.alist}>
                 <Button variant='text'>
-                  <Link href={`/doc/${item.id}`} className={home.linktxt}>
-                    {item.title}
+                  <Link href={`/kind/${item}`} className={home.linktxt}>
+                    {item}
                   </Link>
                 </Button>
               </li>

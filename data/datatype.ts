@@ -7,4 +7,5 @@ export type datatype={
   title: string;
   detail:string;
   time: string;
+  kind:string[];
 }

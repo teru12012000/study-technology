@@ -7,7 +7,7 @@ import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
 import Head from "next/head";
 import Link from "next/link";
-import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
+
 type Props={
   data:datatype
 }
@@ -40,15 +40,9 @@ const Doc:NextPage<Props> = ({data}) => {
         <meta name="description" content="私が技術の勉強をまとめたやつです" />
       </Head>
 
-      <Header/>
-      <div className={doc.iconbox}>
-        <Link href={"/"}>
-          <IconButton aria-label="delete" size="large">
-            <KeyboardBackspaceIcon fontSize="inherit" color="primary" />
-          </IconButton>
-        </Link>
-        
-      </div>
+      <Header
+        link={`/kind/${data.kind[0]}`}
+      />
       <section>
         <h1 className={doc.titletxt}>{data.title}</h1>
         <div dangerouslySetInnerHTML={{__html:`${data.detail}`}} className={doc.content}></div>

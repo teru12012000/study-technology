@@ -1,13 +1,16 @@
 import {style} from '@vanilla-extract/css'
 
 const home={
-  content:style({
-    textAlign:"center",
-    width:"100%",
-  }),
+  content:style({}),
   about:style({
     fontWeight:"bold",
-    fontSize:24,
+    textAlign:"center",
+    fontSize:20,
+    '@media':{
+      'screen and (max-width:750px)':{
+        fontSize:10,
+      }
+    }
   }),
   menucontent:style({
     width:"50%",
@@ -30,7 +33,8 @@ const home={
   linktxt:style({
     color:"#2196f3",
     textDecoration:"none",
-  })
+    textAlign:"left",
+  }),
 }
 
 export default home;
