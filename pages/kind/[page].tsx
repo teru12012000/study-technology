@@ -24,7 +24,8 @@ export const getStaticProps:GetStaticProps=async()=>{
   return {
     props:{
       data:data.contents,
-    }
+    },
+    revalidate: 5,
   }
 }
 const Page:NextPage<Props> = ({data}) => {

@@ -28,7 +28,8 @@ export const getStaticProps:GetStaticProps<Props,Params>=async(context)=>{
   return {
     props:{
       data:data,
-    }
+    },
+    revalidate: 5
   }
 }
 
