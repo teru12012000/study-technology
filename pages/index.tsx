@@ -37,6 +37,7 @@ export default function Home({data}:Props) {
       <section className={home.content}>
         <p className={home.about}>
           こちらは私が勉強したものを簡単にまとめたものです。<br/>
+          たまに感想的なものもあります。
         </p>
         <div className={home.menucontent}>
           <ol className={home.menulist}>
