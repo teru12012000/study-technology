@@ -2,14 +2,18 @@ import { style } from "@vanilla-extract/css";
 
 const header={
   contants:style({
-    height:"5%",
-    padding:10,
+    textAlign:"center",
     backgroundColor:"black",
     color:"white",
+    padding:"5px",
+    '@media':{
+      'screen and (min-width:890px)':{
+        display:"flex",
+        justifyContent:"space-between",
+      }
+    }
   }),
   title:style({
-    margin:0,
-    marginLeft:5,
     fontSize:30,
     '@media':{
       'screen and (max-width:750px)':{
@@ -19,6 +23,16 @@ const header={
   }),
   iconbox:style({
     margin:5
+  }),
+  linkstyle:style({
+    display:"inline-block",
+    textAlign:"center",
+    marginTop:"20px",
+    marginLeft:"10px",
+  }),
+  linktxt:style({
+    color:"white",
+    textDecoration:"none",
   })
 }
 
