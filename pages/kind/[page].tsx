@@ -35,7 +35,7 @@ const Page:NextPage<Props> = ({data}) => {
     <>
       <Head>
         <title>{page as string}について</title>
-        <meta name="description" content={`${page}についてまとめたものです`}/>
+        <meta name="description" content={`${page as string}についてまとめたものです`}/>
       </Head>
       <Header
         link="/"
